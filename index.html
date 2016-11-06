@@ -22,11 +22,7 @@
 			}
 		</script>
 
-		<script src="js/lib/jquery.js"></script>
-		<!-- your scripts here -->
-		<script src="js/app/app.js"></script>
-		<script src="js/app/bootstrap.js"></script>
-		<script src="js/lib/jquery.mobile.js"></script>
+		
 		<style>
 			.ui-selectmenu.ui-popup .ui-input-search {
 				margin-left: .5em;
@@ -85,14 +81,20 @@
 		</div><!-- /page -->
 
 
-			<script type="text/javascript" src="js/index.js"></script>		
+			
+			<script src="js/lib/jquery.js"></script>
+		<!-- your scripts here -->
+		<script src="js/app/app.js"></script>
+		<script src="js/app/bootstrap.js"></script>
+		<script src="js/lib/jquery.mobile.js"></script>	
+		<script type="text/javascript" src="js/index.js"></script>	
 	</body>
-	<script>
-		$.mobile.document
+	<!--<script>
+		
 		// "filter-menu-menu" is the ID generated for the listview when it is created
 		// by the custom selectmenu plugin. Upon creation of the listview widget we
 		// want to prepend an input field to the list to be used for a filter.
-		.on("listviewcreate", "#filter-menu-menu", function(e) {
+		$.mobile.document.on("listviewcreate", "#filter-menu-menu", function(e) {
 			var input,
 			    listbox = $("#filter-menu-listbox"),
 			    form = listbox.jqmData("filter-form"),
@@ -120,7 +122,7 @@
 		//
 		// After the dialog is closed, the form containing the filter input is
 		// transferred back into the popup.
-		.on("pagebeforeshow pagehide", "#filter-menu-dialog", function(e) {
+		$.mobile.document.on("pagebeforeshow pagehide", "#filter-menu-dialog", function(e) {
 			var form = $("#filter-menu-listbox").jqmData("filter-form"),
 			    placeInDialog = (e.type === "pagebeforeshow" ),
 			    destination = placeInDialog ? $(e.target).find(".ui-content") : $("#filter-menu-listbox");
@@ -130,5 +132,5 @@
 			// it looks better that way.
 			.textinput("option", "inset", !placeInDialog).end().prependTo(destination);
 		});
-	</script>
+	</script>-->
 </html>
