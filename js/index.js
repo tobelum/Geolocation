@@ -15,13 +15,12 @@ function onDeviceReady(){
 (function(){
 
 	document.addEventListener('deviceready', onDeviceReady.bind(this), false);
-	var pictureSource;
-	var destinationType;
+
 	function onDeviceReady(){
 		//alert("here");
-		pictureSource = navigator.camera.PictureSourceType;
-		destinationType = navigator.camera.destinationType;
-}
+		var pictureSource = navigator.camera.PictureSourceType;
+		var destinationType = navigator.camera.destinationType;
+
 		document.getElementById("capturePhoto").onclick = function(){
 			navigator.camera.getPicture(onPhotoDataSuccess, onFail,{
 				quality : 50,
@@ -40,6 +39,7 @@ function onDeviceReady(){
       }
    	);
 	}
+
 	var watchID;
 	document.getElementById("geolocation").addEventListener("click", function(){
 //		navigator.geolocation.getCurrentPosition(onSuccess,onError, 
@@ -55,6 +55,9 @@ function onDeviceReady(){
 		var element1 = document.getElementById('divWatchMeMove');
 		element1.innerHTML="";
 	});
+}
+
+
 	
 
 	//camera bit
@@ -82,14 +85,7 @@ function onDeviceReady(){
     }
 
     //geolocation bit
- //    function onSuccess(position){
-	// 	alert('Latitude: ' + position.coords.latitude + '\n' +
-	// 						'Longitude: ' + position.coords.longitude + '\n');
-	// }
-	// function onError(error){
-	// 	alert('code: ' + error.code + '\n' +
-	// 			'message: ' + error.message + '\n');
-	// }
+1
 
 	//watch position bit
 	var onWatchSuccess = function(position) {
